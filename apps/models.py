@@ -25,7 +25,7 @@ class Product(models.Model):
     quantity = models.IntegerField(null=True, blank=True)
     is_premium = models.BooleanField(default=False)
     shopping_cost = models.SmallIntegerField(default=0)
-    tags = models.ManyToManyField('apps.Tag', blank=True)
+    tags = models.ForeignKey('apps.Tag', models.CASCADE,blank=True,default=1)
     specification = models.JSONField(default=dict, blank=True)
     author = models.ForeignKey('apps.User', models.CASCADE)
 

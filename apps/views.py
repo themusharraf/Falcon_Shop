@@ -46,9 +46,11 @@ def product_list(request):
 
 
 def product_detail(request, pk=None):
-    product = Product.objects.filter(pk=pk)
+    image = ProductImage.objects.filter(product_id=pk)
+    product = Product.objects.get(id=pk)
     context = {
-        'product': product
+        'product': product,
+        'image': image
     }
     return render(request, 'apps/product/product-details.html', context)
 

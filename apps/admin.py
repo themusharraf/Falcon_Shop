@@ -1,10 +1,27 @@
 from django.contrib import admin
-from apps.models import Product
+from apps.models import Product, Tag, ProductImage
+
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    pass
-    # list_display = ('name', 'image', 'price', 'description','long_description','discount','number','shop_cost','tags'
-    #                 ,'specification')
-    # fields = ('name', 'image', 'price', 'description')
+    list_display = (
+        'title', 'short_description', 'price', 'is_premium', 'description', 'shopping_cost', 'specification',
+        'discount', 'quantity')
+
+    fields = (
+        'name', 'short_description', 'price', 'is_premium', 'description', 'shopping_cost', 'specification', 'tags',
+        'author ',
+        'discount', 'quantity')
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    fields = ('name',)
+
+
+@admin.register(ProductImage)
+class ProductImageAdmin(admin.ModelAdmin):
+    list_display = ('product', 'image')
+    fields = ('product', 'image')
