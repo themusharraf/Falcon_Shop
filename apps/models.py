@@ -1,23 +1,33 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.db.models import EmailField
 
 
 class User(AbstractUser):
-    email = EmailField(unique=True)
+    class Status(models.TextChoices):
+        ADMIN = 'admin', 'Admin'
+        CLIENT = 'client', 'Client'
+        VIP_CLIENT = 'vip_client', 'Vip client'
+
+    status = models.CharField(max_length=50, choices=Status.choices, default=Status.CLIENT)
+    email = models.EmailField(unique=True)
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=255)
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='images/')
-    price = models.IntegerField(null=True, blank=True)
-    description = models.TextField()
-    long_description = models.TextField(blank=True, null=True)
+    title = models.CharField(max_length=255)
+    price = models.IntegerField()
+    short_description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     discount = models.IntegerField(null=True, blank=True)
-    number = models.IntegerField(null=True, blank=True)
-    shop_cost = models.IntegerField()
-    tags = models.TextField(blank=True, null=True)
+    quantity = models.IntegerField(null=True, blank=True)
+    is_premium = models.BooleanField(default=False)
+    shopping_cost = models.SmallIntegerField(default=0)
+    tags = models.ManyToManyField('apps.Tag', blank=True)
     specification = models.JSONField(default=dict, blank=True)
+    author = models.ForeignKey('apps.User', models.CASCADE)
 
     class Meta:
         verbose_name = 'Product'
@@ -25,4 +35,9 @@ class Product(models.Model):
         db_table = 'products'
 
     def __str__(self):
-        return self.name
+        return self.title
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey('apps.Product', models.CASCADE)
+    image = models.ImageField(upload_to='product/images/')

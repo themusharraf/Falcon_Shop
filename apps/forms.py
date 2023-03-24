@@ -29,6 +29,10 @@ class UsersCreationForm(UserCreationForm):
 
 class ProductForm(forms.ModelForm):
     class Meta:
-        fields = ('name', 'image', 'price', 'description', 'long_description', 'discount', 'number', 'shop_cost', 'tags'
-                  , 'specification')
+        fields = (
+            'title',
+            'price', 'description',
+            'discount', 'quantity',
+            'shopping_cost', 'tags'
+        )
         model = models.Product

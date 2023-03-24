@@ -2,11 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from apps.forms import UsersCreationForm, ProductForm
-from apps.models import Product
-
-
-def homepage(request):
-    return render(request, 'index.html')
+from apps.models import Product, ProductImage
 
 
 def register(request):
@@ -19,7 +15,7 @@ def register(request):
             form.save()
             return redirect('login')
         context['form'] = form
-    return render(request, 'auth/register.html', context)
+    return render(request, 'apps/auth/register.html', context)
 
 
 def login_page(request):
@@ -29,42 +25,42 @@ def login_page(request):
         if user is not None:
             login(request, user)
             return redirect('products')
-    return render(request, 'auth/login.html')
+    return render(request, 'apps/auth/login.html')
 
 
 def forgot(request):
-    return render(request, 'auth/forgot-password.html')
+    return render(request, 'apps/auth/forgot-password.html')
 
 
 def logout_page(request):
     logout(request)
-    return render(request, 'auth/logout.html')
+    return render(request, 'apps/auth/logout.html')
 
 
-def product(request):
+def product_list(request):
     products = Product.objects.all()
     context = {
         'products': products
     }
-    return render(request, 'product/product-grid.html', context)
+    return render(request, 'apps/product/product-grid.html', context)
 
 
-def product_details(request):
-    products = Product.objects.all()
+def product_detail(request, pk=None):
+    product = Product.objects.filter(pk=pk)
     context = {
-        'products': products
+        'product': product
     }
-    return render(request, 'product/product-details.html', context)
+    return render(request, 'apps/product/product-details.html', context)
 
 
 def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            form.instance.author = request.user
+            product = form.save()
+            for image in request.FILES.getlist('images'):
+                ProductImage.objects.create(image=image, product=product)
+
         return redirect('/')
-    return render(request, 'product/add_product.html')
-
-
-# Apple MacBook Pro (15" Retina, Touch Bar, 2.2GHz 6-Core Intel Core i7, 16GB RAM, 256GB SSD) - Space Gray (Latest Model)
-# Testing conducted by Apple in October 2018 using pre-production 2.9GHz 6‑core Intel Core i9‑based 15-inch MacBook Pro systems with Radeon Pro Vega 20 graphics, and shipping 2.9GHz 6‑core Intel Core i9‑based 15‑inch MacBook Pro systems with Radeon Pro 560X graphics, both configured with 32GB of RAM and 4TB SSD.
+    return render(request, 'apps/product/add_product.html')
