@@ -17,29 +17,29 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/favicons/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicons/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicons/favicon-16x16.png' %}">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicons/favicon.ico' %}">
-    <link rel="manifest" href="{% static 'assets/img/favicons/manifest.json' %}">
-    <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/mstile-150x150.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apps/assets/img/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'apps/assets/img/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'apps/assets/img/favicons/favicon-16x16.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'apps/assets/img/favicons/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'apps/assets/img/favicons/manifest.json' %}">
+    <meta name="msapplication-TileImage" content="{% static 'apps/assets/img/favicons/mstile-150x150.png' %}">
     <meta name="theme-color" content="#ffffff">
-    <script src="{% static 'assets/js/config.js' %}"></script>
-    <script src="{% static 'vendors/overlayscrollbars/OverlayScrollbars.min.js' %}"></script>
+    <script src="{% static 'apps/assets/js/config.js' %}"></script>
+    <script src="{% static 'apps/vendors/overlayscrollbars/OverlayScrollbars.min.js' %}"></script>
 
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="{% static 'vendors/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'apps/vendors/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
           rel="stylesheet">
-    <link href="{% static 'vendors/overlayscrollbars/OverlayScrollbars.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/css/theme-rtl.min.css' %}" rel="stylesheet" id="style-rtl">
-    <link href="{% static 'assets/css/theme.min.css' %}" rel="stylesheet" id="style-default">
-    <link href="{% static 'assets/css/user-rtl.min.css' %}" rel="stylesheet" id="user-style-rtl">
-    <link href="{% static 'assets/css/user.min.css' %}" rel="stylesheet" id="user-style-default">
+    <link href="{% static 'apps/vendors/overlayscrollbars/OverlayScrollbars.min.css' %}" rel="stylesheet">
+    <link href="{% static 'apps/assets/css/theme-rtl.min.css' %}" rel="stylesheet" id="style-rtl">
+    <link href="{% static 'apps/assets/css/theme.min.css' %}" rel="stylesheet" id="style-default">
+    <link href="{% static 'apps/assets/css/user-rtl.min.css' %}" rel="stylesheet" id="user-style-rtl">
+    <link href="{% static 'apps/assets/css/user.min.css' %}" rel="stylesheet" id="user-style-default">
     <script>
         var isRTL = JSON.parse(localStorage.getItem('isRTL'));
         if (isRTL) {
@@ -82,7 +82,7 @@
             </script>
             <div class="d-flex align-items-center">
                 <a class="navbar-brand" href="{% url 'product_list' %}">
-                    <div class="d-flex align-items-center py-3"><img class="me-2"src="{% static 'assets/img/icons/spot-illustrations/falcon.png' %}"alt="" width="40"/><span class="font-sans-serif">falcon</span>
+                    <div class="d-flex align-items-center py-3"><img class="me-2"src="{% static 'apps/assets/img/icons/spot-illustrations/falcon.png' %}"alt="" width="40"/><span class="font-sans-serif">falcon</span>
                     </div>
                 </a>
             </div>
@@ -2049,7 +2049,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="file-thumbnail me-2"><img
                                                 class="border h-100 w-100 fit-cover rounded-3"
-                                                src="{% static 'assets/img/products/3-thumb.png' %}" alt=""/></div>
+                                                src="{% static 'apps/assets/img/products/3-thumb.png' %}" alt=""/></div>
                                         <div class="flex-1">
                                             <h6 class="mb-0 title">iPhone</h6>
                                             <p class="fs--2 mb-0 d-flex"><span class="fw-semi-bold">Antony</span><span
@@ -2060,7 +2060,7 @@
                                     <a class="dropdown-item px-card py-2" href="#!">
                                         <div class="d-flex align-items-center">
                                             <div class="file-thumbnail me-2"><img class="img-fluid"
-                                                                                  src="{% static 'assets/img/icons/zip.png' %}"
+                                                                                  src="{% static 'apps/assets/img/icons/zip.png' %}"
                                                                                   alt=""/></div>
                                             <div class="flex-1">
                                                 <h6 class="mb-0 title">Falcon v1.8.2</h6>
@@ -2076,7 +2076,7 @@
                                                        href="../../../pages/user/profile.html">
                                     <div class="d-flex align-items-center">
                                         <div class="avatar avatar-l status-online me-2">
-                                            <img class="rounded-circle" src="{% static 'assets/img/team/1.jpg' %}"
+                                            <img class="rounded-circle" src="{% static 'apps/assets/img/team/1.jpg' %}"
                                                  alt=""/>
 
                                         </div>
@@ -2089,7 +2089,7 @@
                                     <a class="dropdown-item px-card py-2" href="../../../pages/user/profile.html">
                                         <div class="d-flex align-items-center">
                                             <div class="avatar avatar-l me-2">
-                                                <img class="rounded-circle" src="{% static 'assets/img/team/2.jpg' %}"
+                                                <img class="rounded-circle" src="{% static 'apps/assets/img/team/2.jpg' %}"
                                                      alt=""/>
 
                                             </div>
@@ -2102,7 +2102,7 @@
                                     <a class="dropdown-item px-card py-2" href="../../../pages/user/profile.html">
                                         <div class="d-flex align-items-center">
                                             <div class="avatar avatar-l me-2">
-                                                <img class="rounded-circle" src="{% static 'assets/img/team/2.jpg' %}"
+                                                <img class="rounded-circle" src="{% static 'apps/assets/img/team/2.jpg' %}"
                                                      alt=""/>
 
                                             </div>
@@ -2147,7 +2147,7 @@
                                                      role="button" data-bs-toggle="dropdown" aria-haspopup="true"
                                                      aria-expanded="false">
                         <div class="avatar avatar-xl">
-                            <img class="rounded-circle" src="{% static 'assets/img/team/3-thumb.png' %}" alt=""/>
+                            <img class="rounded-circle" src="{% static 'apps/assets/img/team/3-thumb.png' %}" alt=""/>
 
                         </div>
                     </a>
@@ -2155,7 +2155,7 @@
                             <div class="bg-white dark__bg-1000 rounded-2 py-2">
                                 {% if request.user.is_authenticated %}
                                     <a class="dropdown-item" href="#!">Add product</a>
-                                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                                    <a class="dropdown-item" href="{% url 'logout_page' %}">Logout</a>
                                 {% else %}
                                     <a class="dropdown-item" href="{% url 'register' %}">Register</a>
                                     <a class="dropdown-item" href="{% url 'login_page' %}">Login</a>
@@ -2489,7 +2489,7 @@
         <hr/>
         <div class="d-flex justify-content-between">
             <div class="d-flex align-items-start"><img class="me-2"
-                                                       src="{% static 'assets/img/icons/left-arrow-from-left.svg' %}"
+                                                       src="{% static 'apps/assets/img/icons/left-arrow-from-left.svg' %}"
                                                        width="20" alt=""/>
                 <div class="flex-1">
                     <h5 class="fs-0">RTL Mode</h5>
@@ -2504,7 +2504,7 @@
         </div>
         <hr/>
         <div class="d-flex justify-content-between">
-            <div class="d-flex align-items-start"><img class="me-2" src="{% static 'assets/img/icons/arrows-h.svg' %}"
+            <div class="d-flex align-items-start"><img class="me-2" src="{% static 'apps/assets/img/icons/arrows-h.svg' %}"
                                                        width="20" alt=""/>
                 <div class="flex-1">
                     <h5 class="fs-0">Fluid Layout</h5>
@@ -2518,7 +2518,7 @@
             </div>
         </div>
         <hr/>
-        <div class="d-flex align-items-start"><img class="me-2" src="{% static 'assets/img/icons/paragraph.svg' %}"
+        <div class="d-flex align-items-start"><img class="me-2" src="{% static 'apps/assets/img/icons/paragraph.svg' %}"
                                                    width="20" alt=""/>
             <div class="flex-1">
                 <h5 class="fs-0 d-flex align-items-center">Navigation Position </h5>
@@ -2557,28 +2557,28 @@
                     <input class="btn-check" id="navbar-style-transparent" type="radio" name="navbarStyle"
                            value="transparent" data-theme-control="navbarStyle"/>
                     <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-transparent"> <img
-                            class="img-fluid img-prototype" src="{% static 'assets/img/generic/default.png' %}" alt=""/><span
+                            class="img-fluid img-prototype" src="{% static 'apps/assets/img/generic/default.png' %}" alt=""/><span
                             class="label-text"> Transparent</span></label>
                 </div>
                 <div class="col-6">
                     <input class="btn-check" id="navbar-style-inverted" type="radio" name="navbarStyle" value="inverted"
                            data-theme-control="navbarStyle"/>
                     <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-inverted"> <img
-                            class="img-fluid img-prototype" src="{% static 'assets/img/generic/inverted.png' %}"
+                            class="img-fluid img-prototype" src="{% static 'apps/assets/img/generic/inverted.png' %}"
                             alt=""/><span class="label-text"> Inverted</span></label>
                 </div>
                 <div class="col-6">
                     <input class="btn-check" id="navbar-style-card" type="radio" name="navbarStyle" value="card"
                            data-theme-control="navbarStyle"/>
                     <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-card"> <img
-                            class="img-fluid img-prototype" src="{% static 'assets/img/generic/card.png' %}"
+                            class="img-fluid img-prototype" src="{% static 'apps/assets/img/generic/card.png' %}"
                             alt=""/><span class="label-text"> Card</span></label>
                 </div>
-                <div class="col-6">
+                <div class{% url 'logout' %}="col-6">
                     <input class="btn-check" id="navbar-style-vibrant" type="radio" name="navbarStyle" value="vibrant"
                            data-theme-control="navbarStyle"/>
                     <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-vibrant"> <img
-                            class="img-fluid img-prototype" src="{% static 'assets/img/generic/vibrant.png' %}" alt=""/><span
+                            class="img-fluid img-prototype" src="{% static 'apps/assets/img/generic/vibrant.png' %}" alt=""/><span
                             class="label-text"> Vibrant</span></label>
                 </div>
             </div>
@@ -2612,17 +2612,17 @@
 <!-- ===============================================-->
 <!--    JavaScripts-->
 <!-- ===============================================-->
-<script src="{% static 'vendors/popper/popper.min.js' %}"></script>
-<script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}"></script>
-<script src="{% static 'vendors/anchorjs/anchor.min.js' %}"></script>
-<script src="{% static 'vendors/is/is.min.js' %}"></script>
-<script src="{% static 'vendors/swiper/swiper-bundle.min.js' %}"></script>
-<script src="{% static 'vendors/rater-js/index.js' %}"></script>
-<script src="{% static 'vendors/fontawesome/all.min.js' %}"></script>
-<script src="{% static 'vendors/lodash/lodash.min.js' %}"></script>
+<script src="{% static 'apps/vendors/popper/popper.min.js' %}"></script>
+<script src="{% static 'apps/vendors/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'apps/vendors/anchorjs/anchor.min.js' %}"></script>
+<script src="{% static 'apps/vendors/is/is.min.js' %}"></script>
+<script src="{% static 'apps/vendors/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'apps/vendors/rater-js/index.js' %}"></script>
+<script src="{% static 'apps/vendors/fontawesome/all.min.js' %}"></script>
+<script src="{% static 'apps/vendors/lodash/lodash.min.js' %}"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-<script src="{% static 'vendors/list.js/list.min.js' %}"></script>
-<script src="{% static 'assets/js/theme.js' %}"></script>
+<script src="{% static 'apps/vendors/list.js/list.min.js' %}"></script>
+<script src="{% static 'apps/assets/js/theme.js' %}"></script>
 
 </body>
 

@@ -29,7 +29,7 @@ def login_page(request):
 
 
 def forgot(request):
-    return render(request, 'apps/auth/forgot-password.html')
+    return render(request, 'apps/auth/forgot_password.html')
 
 
 def logout_page(request):
@@ -43,7 +43,7 @@ def product_list(request):
     context = {
         'products': products
     }
-    return render(request, 'apps/product/product-grid.html', context)
+    return render(request, 'apps/product/product_grid.html', context)
 
 
 def product_detail(request, pk=None):
@@ -53,7 +53,7 @@ def product_detail(request, pk=None):
         'product': product,
         'image': image
     }
-    return render(request, 'apps/product/product-details.html', context)
+    return render(request, 'apps/product/product_details.html', context)
 
 
 def add_product(request):

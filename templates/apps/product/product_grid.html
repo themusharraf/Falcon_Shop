@@ -1,0 +1,106 @@
+{% extends 'apps/base.html' %}
+{% load static %}
+
+{% block title %}
+    Product list
+{% endblock %}
+
+
+{% block main_content %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row flex-between-center">
+                <div class="col-sm-auto mb-2 mb-sm-0">
+                    <h6 class="mb-0">Showing 1-24 of 205 Products</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body p-0 overflow-hidden">
+            {% for product in products %}
+
+            <div class="row g-0">
+                <div class="col-12 p-card">
+                    <div class="row">
+                        <div class="col-sm-5 col-md-4">
+                            <div class="position-relative h-sm-100"><a class="d-block h-100"
+                                                                       href="../../../app/e-commerce/product/product-details.html"><img
+                                    class="img-fluid fit-cover w-sm-100 h-sm-100 rounded-1 absolute-sm-centered"
+                                    src="{% static 'apps/assets/img/products/2.jpg' %}" alt=""/></a>
+                                <div class="badge rounded-pill bg-success position-absolute top-0 end-0 me-2 mt-2 fs--2 z-index-2">
+                                    New
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 col-md-8">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h5 class="mt-3 mt-sm-0"><a class="text-dark fs-0 fs-lg-1"
+                                                                href="{% url 'product_detail' product.id %}">{{ product.title }}</a></h5>
+                                    <p class="fs--1 mb-2 mb-md-3"><a class="text-500" href="#!">{{ product.tags }}</a></p>
+                                    <ul class="list-unstyled d-none d-lg-block">
+                                        <li><span class="fas fa-circle"
+                                                  data-fa-transform="shrink-12"></span><span>16GB RAM</span>
+                                        </li>
+                                        <li><span class="fas fa-circle"
+                                                  data-fa-transform="shrink-12"></span><span>1TB SSD Hard Drive</span>
+                                        </li>
+                                        <li><span class="fas fa-circle"
+                                                  data-fa-transform="shrink-12"></span><span>10-core Intel Xeon</span>
+                                        </li>
+                                        <li><span class="fas fa-circle"
+                                                  data-fa-transform="shrink-12"></span><span>Mac OS</span></li>
+                                        <li><span class="fas fa-circle"
+                                                  data-fa-transform="shrink-12"></span><span>Secured</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4 d-flex justify-content-between flex-column">
+                                    <div>
+                                        <h4 class="fs-1 fs-md-2 text-warning mb-0">{{ product.price  }}</h4>
+                                        <h5 class="fs--1 text-500 mb-0 mt-1">
+                                            <del>$2399</del>
+                                            <span class="ms-1">-{{ product.discount }}</span>
+                                        </h5>
+                                        <div class="mb-2 mt-3"><span
+                                                class="fa fa-star text-warning"></span><span
+                                                class="fa fa-star text-warning"></span><span
+                                                class="fa fa-star text-warning"></span><span
+                                                class="fa fa-star text-warning"></span><span
+                                                class="fa fa-star text-300"></span><span class="ms-1">({{ product.quantity }})</span>
+                                        </div>
+                                        <div class="d-none d-lg-block">
+                                            <p class="fs--1 mb-1">Shipping Cost: <strong>${{ product.shopping_cost }}</strong></p>
+                                            <p class="fs--1 mb-1">Stock: <strong
+                                                    class="text-success">Available</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2"><a
+                                            class="btn btn-sm btn-outline-secondary border-300 d-lg-block me-2 me-lg-0"
+                                            href="#!"><span class="far fa-heart"></span><span
+                                            class="ms-2 d-none d-md-inline-block">Favourite</span></a><a
+                                            class="btn btn-sm btn-primary d-lg-block mt-lg-2" href="#!"><span
+                                            class="fas fa-cart-plus"> </span><span
+                                            class="ms-2 d-none d-md-inline-block">Add to Cart</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="card-footer border-top d-flex justify-content-center">
+            <button class="btn btn-falcon-default btn-sm me-2" type="button" disabled="disabled"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Prev"><span
+                    class="fas fa-chevron-left"></span></button>
+            <a class="btn btn-sm btn-falcon-default text-primary me-2" href="#!">1</a><a
+                class="btn btn-sm btn-falcon-default me-2" href="#!">2</a><a
+                class="btn btn-sm btn-falcon-default me-2" href="#!"><span class="fas fa-ellipsis-h"></span></a><a
+                class="btn btn-sm btn-falcon-default me-2" href="#!">35</a>
+            <button class="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="Next"><span class="fas fa-chevron-right"></span></button>
+        </div>
+    </div>
+{% endblock %}
