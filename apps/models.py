@@ -41,3 +41,5 @@ class Product(models.Model):
 class ProductImage(models.Model):
     product = models.ForeignKey('apps.Product', models.CASCADE)
     image = models.ImageField(upload_to='product/images/')
+
+

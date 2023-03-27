@@ -1,12 +1,12 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from apps.models import Product, Tag, ProductImage
-
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'title', 'short_description', 'price', 'is_premium', 'description', 'shopping_cost', 'specification',
+        'title', 'short_description', 'price', 'is_premium', 'shopping_cost', 'specification',
         'discount', 'quantity')
 
     fields = (
@@ -23,5 +23,17 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(ProductImage)
 class ProductImageAdmin(admin.ModelAdmin):
-    list_display = ('product', 'image')
-    fields = ('product', 'image')
+    list_display = ('product', 'image_tag')
+
+    def image_tag(self, obj):
+        return format_html(f'''<a href="{obj.image.url}" target="_blank"><img src="{obj.image.url}"
+         alt="image" width="100 height="100" style="object-fit : cover;"/></a>''')
+
+    def save_formset(self, request, form, formset, change):
+        instances = formset.save(commit=False)
+        for obj in formset.deleted.objects:
+            obj.delete()
+        for instance in instances:
+            instance.user = request.user
+            instance.save()
+        formset.save.m2m()
