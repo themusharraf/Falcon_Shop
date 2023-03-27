@@ -1,17 +1,26 @@
 from django.contrib import admin
+from django.contrib.admin import TabularInline, StackedInline
+from django.contrib.admin.options import InlineModelAdmin
 from django.utils.html import format_html
 from apps.models import Product, Tag, ProductImage
 
 
+class ProductImagesInline(StackedInline):
+    min_num = 1
+    extra = 0
+    model = ProductImage
+
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    inlines = (ProductImagesInline,)
     list_display = (
         'title', 'short_description', 'price', 'is_premium', 'shopping_cost', 'specification',
         'discount', 'quantity')
 
     fields = (
-        'name', 'short_description', 'price', 'is_premium', 'description', 'shopping_cost', 'specification', 'tags',
-        'author ',
+        'title', 'short_description', 'price', 'is_premium', 'description', 'shopping_cost', 'specification', 'tags',
+        'author',
         'discount', 'quantity')
 
 
