@@ -46,3 +46,5 @@ class ProductImage(models.Model):
     image = models.ImageField(upload_to='product/images/')
 
 
+
+

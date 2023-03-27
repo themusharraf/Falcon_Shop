@@ -24,7 +24,7 @@ def login_page(request):
         user = authenticate(username=form.data['username'], password=form.data['password'])
         if user is not None:
             login(request, user)
-            return redirect('products')
+            return redirect('product_list')
     return render(request, 'apps/auth/login.html')
 
 
@@ -34,7 +34,8 @@ def forgot(request):
 
 def logout_page(request):
     logout(request)
-    return render(request, 'apps/auth/logout.html')
+    return redirect('product_list')
+    # return render(request, 'apps/auth/logout.html')
 
 
 def product_list(request):

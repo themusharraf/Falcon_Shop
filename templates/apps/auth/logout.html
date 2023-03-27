@@ -1,4 +1,4 @@
-{% extends 'apps/auth/base.html' %}
+{% extends 'apps/base.html' %}
 {% load static %}
 {% block main_block %}
     <!-- ===============================================-->
@@ -17,7 +17,7 @@
                       </div>
                       <!--/.bg-holder-->
 
-                      <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="../../../index.html">falcon</a>
+                      <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="{% url 'product_list' %}">falcon</a>
                         <p class="opacity-75 text-white">With the power of Falcon, you can now focus only on functionaries for your digital products, while leaving the UI design on us!</p>
                       </div>
                     </div>
@@ -29,7 +29,7 @@
                     <div class="p-4 p-md-5 flex-grow-1">
                       <div class="text-center"><img class="d-block mx-auto mb-4" src="{% static 'assets/img/icons/spot-illustrations/45.png' %}" alt="shield" width="100" />
                         <h3>See you again!</h3>
-                        <p>Thanks for using Falcon. You are <br />now successfully signed out.</p><a class="btn btn-primary btn-sm mt-3" href="{% url 'login' %}"><span class="fas fa-chevron-left me-1" data-fa-transform="shrink-4 down-1"></span>Return to Login</a>
+                        <p>Thanks for using Falcon. You are <br />now successfully signed out.</p><a class="btn btn-primary btn-sm mt-3" href="{% url 'login_page' %}"><span class="fas fa-chevron-left me-1" data-fa-transform="shrink-4 down-1"></span>Return to Login</a>
                       </div>
                     </div>
                   </div>

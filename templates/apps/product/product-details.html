@@ -81,7 +81,7 @@
                 }
             </script>
             <div class="d-flex align-items-center">
-                <a class="navbar-brand" href="../../../index.html">
+                <a class="navbar-brand" href="{% url 'product_list' %}">
                     <div class="d-flex align-items-center py-3"><img class="me-2"src="{% static 'assets/img/icons/spot-illustrations/falcon.png' %}"alt="" width="40"/><span class="font-sans-serif">falcon</span>
                     </div>
                 </a>
@@ -99,7 +99,7 @@
                             </div>
                         </a>
                             <ul class="nav collapse false" id="dashboard">
-                                <li class="nav-item"><a class="nav-link" href="../../../index.html"
+                                <li class="nav-item"><a class="nav-link" href="{% url 'product_list' %}"
                                                         aria-expanded="false">
                                     <div class="d-flex align-items-center"><span
                                             class="nav-link-text ps-1">Default</span>
@@ -1973,7 +1973,7 @@
                         data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse"
                         aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation">
                     <span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-                <a class="navbar-brand me-1 me-sm-3" href="../../../index.html">
+                <a class="navbar-brand me-1 me-sm-3" href="{% url 'product_list' %}">
                     <div class="d-flex align-items-center"><img class="me-2"
                                                                 src="../../../assets/img/icons/spot-illustrations/falcon.png"
                                                                 alt="" width="40"/><span
@@ -2158,7 +2158,7 @@
                                     <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                                 {% else %}
                                     <a class="dropdown-item" href="{% url 'register' %}">Register</a>
-                                    <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                                    <a class="dropdown-item" href="{% url 'login_page' %}">Login</a>
                                 {% endif %}
                             </div>
                         </div>
