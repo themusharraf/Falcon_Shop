@@ -10,7 +10,6 @@ class ProductImagesInline(StackedInline):
     extra = 0
     model = ProductImage
 
-
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     inlines = (ProductImagesInline,)
